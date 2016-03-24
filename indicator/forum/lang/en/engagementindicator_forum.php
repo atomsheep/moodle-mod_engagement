@@ -33,9 +33,9 @@ $string['e_replies_help'] = 'Numbers of replies per week if a student is at no r
 $string['e_totalposts_help'] = 'Numbers of posts (new posts and replies) per week if a student is at no risk (first box) and maximum risk (second box) of disengagement. The weighting (number between 0-100) specifies how important this parameter is. The total of the weightings should add to 100.';
 
 $string['forum_read_count_method'] = 'Read count method';
-$string['forum_read_count_method_help'] = 'Set how this indicator will count reads/views of forum discussions.';
+$string['forum_read_count_method_help'] = 'Set how this indicator will count reads/views of forum discussions. If counting only unique, then repeat visits to the same discussion are not re-counted.';
 $string['forum_read_count_method_all'] = 'Count any and all reads/views of discussions.';
-$string['forum_read_count_method_unique'] = 'Count only unique reads/views of discussions. Repeat visits to the same discussion are not re-counted.';
+$string['forum_read_count_method_unique'] = 'Count only unique reads/views of discussions.';
 
 $string['maxrisk'] = 'Max Risk';
 $string['norisk'] = 'No Risk';
