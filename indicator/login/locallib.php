@@ -69,7 +69,7 @@ function engagementindicator_login_preprocess_configdata_for_edit_form($configda
         if (strpos($setting, 'login_e_') !== FALSE) {
             $configdata[$setting] = $value / $elements[substr($setting, 8)];
         } else if ($setting == 'login_session_length') {
-            $configdata[$setting] = $value / 60;
+            $configdata[$setting] = $value / 60.0;
         }
     }
     return $configdata;

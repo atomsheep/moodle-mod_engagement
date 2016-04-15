@@ -274,7 +274,7 @@ class indicator_login extends indicator {
             } else if (substr($key, 0, 2) == 'e_') {
                 $earray["login_$key"] = $discoveredsettings[$key];
             } else if ($key == 'session_length') {
-                $others[$key] = $setting * 60;
+                $others["login_$key"] = $discoveredsettings[$key];
             } else {
                 $others["login_$key"] = $setting;
             }
@@ -290,6 +290,7 @@ class indicator_login extends indicator {
         foreach ($earray as $key => $value) {
             $earray[$key] = round($value, 2);
         }
+        $others["login_session_length"] = round($others["login_session_length"], 2);
         
         return array_merge($earray, $warray, $others);
         
