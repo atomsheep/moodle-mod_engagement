@@ -71,17 +71,11 @@ class engagementindicator_gradebook_thresholds_form {
                     } else {
                         $gradeitemrowlabel = $gradeitem->itemname;
                     }
-                    if ($gradeitem->gradetype == 1) {
-                        $gradeitemhint = " (".number_format($gradeitem->grademin, 1)."-"
-                            .number_format($gradeitem->grademax, 1).")";
-                    } else {
-                        $gradeitemhint = '';
-                    }
                     // Add checkbox.
                     $mform->addElement('advcheckbox', 
                         'gradeitem_enabled_'.$gradeitem->id, 
-                        $gradeitemrowlabel . $gradeitemhint, 
-                        get_string('gradeitem_enabled', 'engagementindicator_gradebook', $gradeitemrowlabel), 
+                        $gradeitemrowlabel, 
+                        get_string('gradeitem_enabled', 'engagementindicator_gradebook'), 
                         array('data-gradeitem_id' => $gradeitem->id,
                             'group' => 'group_gradeitem_'.$gradeitem->id));
                     $mform->addHelpButton('gradeitem_enabled_'.$gradeitem->id, 
