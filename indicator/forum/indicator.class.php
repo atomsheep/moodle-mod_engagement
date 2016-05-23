@@ -95,13 +95,15 @@ class indicator_forum extends indicator {
                                     FROM {log}
                                    WHERE module = 'forum'
                                      AND action = 'view discussion'
-                                     AND course = :courseid";
+                                     AND course = :courseidlegacy";
+                $params['courseidlegacy'] = $this->courseid;
             } else if ($reader instanceof \logstore_standard\log\store) {
                 $sql['standard'] = "SELECT id, userid, timecreated AS time, courseid AS course, CAST(objectid AS char(64)) AS objectid
                                       FROM {logstore_standard_log}
                                      WHERE target = 'discussion'
                                        AND action = 'viewed'
-                                      AND courseid = :courseid";
+                                      AND courseid = :courseidstandard";
+                $params['courseidstandard'] = $this->courseid;
             }
         }
         // Read from log.
